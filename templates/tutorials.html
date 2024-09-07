@@ -1,0 +1,133 @@
+{% extends "template.html" %}
+{% block content %}
+    <main>
+        <h1>Tutorials</h1>
+        <section id="tut1" class="week">
+            <h2>Tutorial 1</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">Relational Algebra</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-1</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-1</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tut2" class="week">
+            <h2>Tutorial 2</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">SQL Queries</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-2</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-2</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tut3" class="week">
+            <h2>Tutorial 3</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">HTML, CSS</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-3</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-3</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tut4" class="week">
+            <h2>Tutorial 4</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">PHP</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-4</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-4</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tut5" class="week">
+            <h2>Tutorial 5</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">PHP and SQL</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-5</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-5</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tut6" class="week">
+            <h2>Tutorial 6</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">JavaScript and jQuery</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-6</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-6</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tut7" class="week">
+            <h2>Tutorial 7</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">jQuery, AJAX, JSON</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-7</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-7</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tut8" class="week">
+            <h2>Tutorial 8</h2>
+            <div class="table">
+                <div class="row header">
+                    <div class="cell">Topic</div>
+                    <div class="cell">Worksheets</div>
+                    <div class="cell">Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">Review</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Worksheet-8</a></div>
+                    <div class="cell"><a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">Solution-8</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ pagename }}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('announcements') }}">Announcements</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('lectures') }}">Lectures</a></li>
+                <li><a href="{{ url_for('tutorials') }}">Tutorials</a></li>
+                <li><a href="{{ url_for('calendar') }}">Calendar</a></li>
+                <li><a href="{{ url_for('assignments') }}">Assignments</a></li>
+                <li><a href="{{ url_for('courseteam') }}">Course Team</a></li>
+                <li><a href="https://piazza.com/utoronto.ca/winter2024/cscb20h3s" target="_blank">Piazza</a></li>
+                <li><a href="{% if session.position == 'student' %}{{ url_for('student_dashboard') }}{% else %}{{ url_for('instructor_dashboard') }}{% endif %}">Dashboard</a></li>
+                <li><a id="logout" href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p><a href="https://www.cs.toronto.edu/" target="_blank">Faculty of Computer Science, UofT</a></p>
+        <p>Site design by Leo Yang</p>
+    </footer>    
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block content %}
+    <main>
+        <h1>Announcements</h1>
+        <section>
+            <h2>Recent Announcements</h2>
+            <ul>
+                <li>March 6, 2024 - Assignment 1 deadline extended to March 6, 2024.</li>
+                <li>March 5, 2024 -Online lecture on Python Flask has been posted.</li>
+                <li>February 28, 2024 - Lab tutorial schedule updated. Check the <a href="{{ url_for('tutorials') }}">Tutorials</a> page for details.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>March 15, 2024 - Guest lecture on database optimization techniques.</li>
+                <li>March 25, 2024 - Lab tutorial on SQL query optimization.</li>
+                <li>April 5, 2024 - Industry panel discussion on web app development trends.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Past Announcements</h2>
+            <ul>
+                <li>Feburary 26, 2024 - Midterm will be held today, please make sure to bring your TCard.</li>
+                <li>February 15, 2024 - Midterm review session recordings are posted on the course website.</li>
+            </ul>
+        </section>
+        
+    </main>
+{% endblock content %}

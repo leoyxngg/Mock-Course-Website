@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Register</title>
+</head>
+<body id="log">
+    <h1 style="color: white;">Welcome to CSCB20 Course Website!</h1>
+    <form action="http://127.0.0.1:5000/register" method="post" class="login-form">
+        <img src="{{ url_for('static', filename='resources/logo.png') }}" alt="School Logo" id="logo">
+        <h2 style="text-align: center;">Register</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <select id="positons" name="position">
+            <option value="student">Student</option>
+            <option value="instructor">Instructor</option>
+        </select><br><br>
+
+        <button type="submit">Register</button><br><br>
+        <a href="{{ url_for('login') }}">Already have an account?</a>
+        {% with messages = get_flashed_messages(with_categories = True) %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+                <div> <strong>{{ category }}</strong> - {{ message }} </div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block content %}
+<h1>Feedbacks from your students:</h1>
+    <table class="my_table">
+        <tr>
+            <th>What do you like about the instructor's teaching?</th>
+            <th>What do you recommend the instructor to do to improve their teaching?</th>
+            <th>What do you like about the labs?</th>
+            <th>What do you recommend the lab instructors to do to improve their lab teaching?</th>
+        </tr>
+        {% for feedback in feedback_query_results %}
+        <tr>
+            <td>{{ feedback.feedback1 }}</td>
+            <td>{{ feedback.feedback2 }}</td>
+            <td>{{ feedback.feedback3 }}</td>
+            <td>{{ feedback.feedback4 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

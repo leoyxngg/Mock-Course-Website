@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+{% block content %}
+    <h1>Welcome to Instructor Dashboard</h1>
+    <div class="buttons-container">
+        <a href="{{ url_for('all_grades') }}" class="button">View All Grades</a>
+        <a href="{{ url_for('view_feedback') }}" class="button">View Feedbacks</a>
+        <a href="{{ url_for('input_grades') }}" class="button">Input Grades</a>
+        <a href="{{ url_for('regrade_requests') }}" class="button">View Regrade Requests</a>
+    </div>
+{% endblock content %}

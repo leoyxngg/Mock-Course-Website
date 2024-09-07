@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories = True) %}
+{% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+    <div> <strong>{{ category }}</strong> - {{ message }} </div>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %}
+<h1>Grade Inputter<h1>
+    <form action="http://127.0.0.1:5000/input-grades" method="post" class="login-form">
+        <div class="form-group">
+            <label for="username">Select Student:</label>
+            <select id="username" name="username" required>
+                {% for student in students %}
+                    <option value="{{ student }}">{{ student }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="assignment">Assignment</label>
+            <input type="text" id="assignment" name="assignment" required>
+        </div>
+
+        <div class="form-group">
+            <label for="grade">Grade</label>
+            <input type="number" id="grade" name="grade" required>
+        </div>
+        <br><br>
+
+        <button type="submit">Submit</button><br><br>
+    </form>
+{% endblock content %}

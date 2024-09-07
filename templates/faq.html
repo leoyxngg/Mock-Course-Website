@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+{% block content %}
+    <main>
+        <h1>FAQ</h1>
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <dl>
+                <dt>Q: When is the midterm exam?</dt>
+                <dd>A: The midterm exam will be held on Feburary 26, 2024.</dd>
+                
+                <dt>Q: How do I submit assignments?</dt>
+                <dd>A: Assignments should be submitted on <a href="https://markus2.utsc.utoronto.ca/courses/20/assignments" target="_blank">Markus</a>. Please refer to the <a href="{{ url_for('static', filename='resources/CSCB20 Winter 2024 Course Information Sheet.pdf') }}" target="_blank">Syllabus</a> for more details.</dd>
+                
+                <dt>Q: Are there any prerequisites for this course?</dt>
+                <dd>A: Yes, some experience with programming in an imperative language such as Python, Java, or C is recommended.</dd>
+            </dl>
+        </section>
+        <section>
+            <h2>Technical Support</h2>
+            <dl>
+                <dt>Q: What do I do if I encounter technical issues during an exam?</dt>
+                <dd>A: If you experience technical difficulties during an exam, please immediately notify the course instructor or a proctor for assistance.</dd>
+                
+                <dt>Q: How do I access course materials if I miss a lecture?</dt>
+                <dd>A: Lecture slides are typically posted on the <a href="{{ url_for('lectures') }}">Lectures</a> page within 24 hours for your reference.</dd>
+            </dl>
+        </section>
+        
+        <section>
+            <h2>Course Policies</h2>
+            <dl>
+                <dt>Q: What is the late submission policy for assignments?</dt>
+                <dd>A: Late submissions may incur penalties unless there are extenuating circumstances. Please refer to the <a href="{{ url_for('static', filename='resources/CSCB20 Winter 2024 Course Information Sheet.pdf') }}" target="_blank">Syllabus</a> for details.</dd>
+                
+                <dt>Q: Can I request a remark for an assignment or exam?</dt>
+                <dd>A: Yes, you may request a remark within 48 hours of receiving your grade. Please follow the instructions provided on the regrade request section in the <a href="{{ url_for('static', filename='resources/CSCB20 Winter 2024 Course Information Sheet.pdf') }}" target="_blank">Syllabus</a>.</dd>
+            </dl>
+        </section>       
+    </main>
+{% endblock content %}

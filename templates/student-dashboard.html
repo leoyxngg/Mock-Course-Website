@@ -1,0 +1,8 @@
+{% extends "template.html" %}
+{% block content %}
+    <h1>Welcome to Student Dashboard</h1>
+    <div class="buttons-container">
+        <a href="{{ url_for('marks') }}" class="button">View My Marks</a>
+        <a href="{{ url_for('feedback') }}" class="button">Give Feedback</a>
+    </div>
+{% endblock content %}

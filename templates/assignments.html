@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block content %}
+    <main>
+        <section id="assignments">
+            <h1>Assignments</h1>
+            <p><i><b>Please hand in your assignments on <a href="https://markus2.utsc.utoronto.ca/courses/20/assignments" target="_blank">Markus</a>.</b></i></p>
+            <div class="assignment">
+                <h3>Assignment 1</h3>
+                <p>Due Date: February 15, 2024</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero ac velit suscipit accumsan.</p>
+                <a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">View Assignment 1 Handout</a>
+            </div>
+
+            <div class="assignment">
+                <h3>Assignment 2</h3>
+                <p>Due Date: March 1, 2024</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero ac velit suscipit accumsan.</p>
+                <a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">View Assignment 2 Handout</a>
+            </div>
+
+            <div class="assignment">
+                <h3>Assignment 3</h3>
+                <p>Due Date: March 15, 2024</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero ac velit suscipit accumsan.</p>
+                <a href="{{ url_for('static', filename='resources/dummypdf.pdf') }}" target="_blank">View Assignment 3 Handout</a>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

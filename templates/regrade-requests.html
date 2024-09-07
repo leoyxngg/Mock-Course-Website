@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block content %}
+<h1>Regrade Requests</h1>
+<table class="my_table">
+    <tr>
+        <th>Student Username</th>
+        <th>Assignment</th>
+        <th>Grade</th>
+        <th>Reason</th>
+    </tr>
+    {% for request in regrade_query_results %}
+    <tr>
+        <td>{{ request.student_username }}</td>
+        <td>{{ request.assignment }}</td>
+        <td>{{ request.grade }}</td>
+        <td>{{ request.regrade_reason }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

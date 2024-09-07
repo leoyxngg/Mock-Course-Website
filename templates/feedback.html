@@ -1,0 +1,46 @@
+{% extends "template.html" %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories = True) %}
+{% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+    <div> <strong>{{ category }}</strong> - {{ message }} </div>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %}
+<h1>Leave a feedback for your instructor!<h1>
+    <form action="http://127.0.0.1:5000/feedback" method="post" class="login-form">
+        <div class="form-group">
+            <label for="instructor_username">Select the instructor you wish to provide feedback for:</label>
+            <select id="instructor_username" name="instructor_username" required>
+                {% for instructor in instructors %}
+                    <option value="{{ instructor }}">{{ instructor }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="feedback1">What do you like about the instructor's teaching?</label>
+            <input type="text" id="feedback1" name="feedback1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="feedback2">What do you recommend the instructor to do to improve their teaching?</label>
+            <input type="text" id="feedback2" name="feedback2" required>
+        </div>
+
+        <div class="form-group">
+            <label for="feedback3">What do you like about the labs?</label>
+            <input type="text" id="feedback3" name="feedback3" required>
+        </div>
+
+        <div class="form-group">
+            <label for="feedback4">What do you recommend the lab instructors to do to improve their lab teaching?</label>
+            <input type="text" id="feedback4" name="feedback4" required>
+        </div>
+        <br><br>
+
+        <button type="submit">Submit</button><br><br>
+    </form>
+{% endblock content %}

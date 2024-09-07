@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block content %}
+<H1>Student Marks</H1>
+    <table class="my_table">
+        <tr>
+            <th>Student Username</th>
+            <th>Assignment</th>
+            <th>Date Posted</th>
+            <th>Grade</th>
+        </tr>
+        {% for mark in marks_query_results %}
+        <tr>
+            <td>{{ mark.student_username }}</td>
+            <td>{{ mark.assignment }}</td>
+            <td>{{ mark.date_posted }}</td>
+            <td>{{ mark.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

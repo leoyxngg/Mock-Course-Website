@@ -1,0 +1,42 @@
+{% extends "template.html" %}
+{% block content %}
+<h1>Your current marks:</h1>
+<table class="my_table">
+    <tr>
+        <th>Assignment</th>
+        <th>Date Posted</th>
+        <th>Grade</th>
+        <th>Action</th>
+    </tr>
+    {% for mark in marks_query_results %}
+    <tr>
+        <td>{{ mark.assignment }}</td>
+        <td>{{ mark.date_posted }}</td>
+        <td>{{ mark.grade }}</td>
+        <td>
+            {% if not mark.regrade_requested %}
+            <div id="action-container-{{ mark.mark_id }}" style="display: incline-block;">
+                <button onclick="showForm('{{ mark.mark_id }}')">Regrade Request</button>
+            </div>
+            {% else %}
+            Regrade Requested
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+    function showForm(markId) {
+    var actionContainer = document.getElementById('action-container-' + markId);
+    actionContainer.innerHTML = `
+        <form id="regrade-form-${markId}" action="{{ url_for('marks') }}" method="post" style="margin: 0; padding: 0; border: none;">
+            <input type="hidden" name="mark_id" value="${markId}">
+            <input type="text" id="regrade_reason" name="regrade_reason" placeholder="Enter reason for regrade" required style="width: 70%; margin-right: 10px;">
+            <input type="submit" value="Submit" style="padding: 6px 12px;">
+        </form>
+    `;
+}
+</script>
+
+{% endblock content %}
